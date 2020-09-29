@@ -29,7 +29,7 @@
 
                     <div class="card-body">
 
-                                <form action="/todos/update" method="POST">
+                                <form action="/todos/{{ $todo->id }}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $todo->name }}">

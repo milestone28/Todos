@@ -92,7 +92,7 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $todo)
+    public function update(Request $request,Todo $todo)
     {
         //
 
@@ -100,6 +100,7 @@ class TodosController extends Controller
             'name' => 'required|max:60|min:4',
             'description' => 'required'
         ]);
+
 
 
 

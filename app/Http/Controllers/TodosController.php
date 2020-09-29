@@ -92,21 +92,21 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $todo)
     {
         //
 
         $request->validate([
-            'name' => 'required|max:25|min:4',
+            'name' => 'required|max:60|min:4',
             'description' => 'required'
         ]);
 
-        $data = new Todo;
 
-        $data->name = $request['name'];
-        $data->description = $request['description'];
-        $data->completed = false;
-        $data->save();
+
+        $todo->name = $request['name'];
+        $todo->description = $request['description'];
+
+        $todo->save();
 
        return redirect('todos')->with('status', 'Todo Successfully Updated !');
 

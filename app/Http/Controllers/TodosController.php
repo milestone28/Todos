@@ -97,7 +97,7 @@ class TodosController extends Controller
         //
 
         $request->validate([
-            'name' => 'required|unique:todos|max:25|min:4',
+            'name' => 'required|max:25|min:4',
             'description' => 'required'
         ]);
 
